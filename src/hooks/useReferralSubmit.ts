@@ -15,7 +15,7 @@ export const useReferralSubmit = (reset: () => void, onClose: () => void) => {
   const submitReferral = async (data: Referral) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("http://localhost:3000/api/referrals", {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/referrals`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
